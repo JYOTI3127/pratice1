@@ -5,12 +5,13 @@ import About from './pages/About'
 import ProductDetails from './pages/Productdetails'
 import Gift from './pages/Gift'
 import Layout from './layout/Layout'
-import Rudraksha from './pages/Rudraksha'
+ 
 import Gemstones from './pages/Gemstones'
 import Vastu from './pages/Vastu'
 import Sidhcollection from './pages/Sidhcollection'
 import Shopbuypurpose from './pages/Shopbuypurpose'
 import Product from './pages/Product';
+import RudrakshaPage from './pages/RudrakshaPage';
  
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/gift" element={<Gift />} />
-        <Route path="/rudraksha" element={<Rudraksha />} />
+        <Route path="/rudraksha" element={<RudrakshaPage />} />
         <Route path="/gemstones" element={<Gemstones />} />
         <Route path="/vastu" element={<Vastu />} />
         <Route path="/sidhcollection" element={<Sidhcollection />} />
