@@ -37,16 +37,15 @@ const SectionSlider = ({ section }) => {
 
       <div
         ref={sliderRef}
-        className="flex gap-4 overflow-x-hidden hide-scrollbar px-5"
+        className="flex gap-4 overflow-x-hidden hide-scrollbar px-3"
       >
         {section.items.map((item, idx) => (
           <Card key={idx} item={item} />
         ))}
 
-        {/* duplicate items for infinite loop */}
-        {section.items.map((item, idx) => (
+        {/* {section.items.map((item, idx) => (
           <Card key={`dup-${idx}`} item={item} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

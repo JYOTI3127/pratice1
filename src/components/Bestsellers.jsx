@@ -6,8 +6,13 @@ const Bestsellers = () => {
   const bestSellersSection = sections.find(
     (section) => section.name === "Best Sellers"
   );
+  
+  return (
+    <>
+      <SectionSlider section={bestSellersSection} />
+    </>
 
-  return <SectionSlider section={bestSellersSection} />;
+  )
 };
 
 export default Bestsellers;

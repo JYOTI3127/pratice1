@@ -22,15 +22,15 @@ const Home = () => {
       <Banner />
       <Bestsellers />
       <ShopbyPurpose />
-      <Rudraksha/>
+      <Rudraksha />
       <HeroSection />
-      <Bracelets/>
-      <Karungali/>
-      <Pyramids/>
-      <AstrologicalSection/>
+      <Bracelets />
+      <Karungali />
+      <Pyramids />
+      <AstrologicalSection />
       <VastuBalance/>
       <Whyastrotalk/>
-      <Gallery />
+      <Gallery />  
     </>
   );
 };

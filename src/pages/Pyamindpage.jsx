@@ -1,16 +1,17 @@
+
 import React from 'react'
 import OurProduct from "../components/Ourproduct";
-import { gemstones } from "../Data/Data";
+import { pyramids } from "../Data/Data";
 
-const Gemstones = () => {
+const Pyamindpage = () => {
   return (
     <div className="p-8">
       <h1 className="text-4xl font-semibold text-center ">
-        {"Our Gemstones"}
+        {"Our pyramid"}
       </h1>
-      <OurProduct products={gemstones} />
+      <OurProduct products={pyramids} />
     </div>
   );
 }
 
-export default Gemstones;
+export default Pyamindpage;

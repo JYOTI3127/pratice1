@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { Search, ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,21 +13,42 @@ const Navbar = () => {
 
         {/* Logo + Text */}
 
-        <div className="flex items-center space-x-3">
-          <Link to="/">
-            <img src={logo} alt="Logo" className="w-40 h-10 cursor-pointer" />
-          </Link>
-        </div>
+
+        <Link to="/">
+          <img src={logo} alt="Logo" className="h-10  " />
+        </Link>
+
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8">
-          <a href="/products" className="hover:text-[#FFC000] text-sm">Product</a>
-          <a href="/gift" className="hover:text-[#FFC000] text-sm">Gift</a>
-          <a href="/rudraksha" className="hover:text-[#FFC000] text-sm">Rudraksha</a>
-          <a href="/gemstones" className="hover:text-[#FFC000] text-sm">Gemstones</a>
-          <a href="/vastu" className="hover:text-[#FFC000] text-sm">Vastu</a>
-          <a href="/sidhcollection" className="hover:text-[#FFC000] text-sm">Sidh Collection</a>
-          <a href="/shopbuypurpose" className="hover:text-[#FFC000] text-sm">Shop Buy Purpose</a>
+          <Link href="/products" className="hover:text-[#FFC000] text-sm">Product</Link>
+          <Link href="/gift" className="hover:text-[#FFC000] text-sm">Gift</Link>
+          <Link href="/rudraksha" className="hover:text-[#FFC000] text-sm">Rudraksha</Link>
+          <Link href="/gemstones" className="hover:text-[#FFC000] text-sm">Gemstones</Link>
+          <Link href="/pyamind" className="hover:text-[#FFC000] text-sm">Pyamind</Link>
+          <Link href="/sidhcollection" className="hover:text-[#FFC000] text-sm">Sidh Collection</Link>
+          <Link href="/shopbuypurpose" className="hover:text-[#FFC000] text-sm">Shop Buy Purpose</Link>
+        </div>
+
+        {/* Right Icons */}
+        <div className="hidden md:flex items-center gap-6">
+          {/* Search */}
+          <button
+            className="hover:text-[#FFC000] transition-colors"
+            aria-label="Search"
+          >
+            <Search size={20} />
+          </button>
+
+          {/* Cart */}
+          <Link to="/Addtocartpage" className="relative hover:text-[#FFC000] transition-colors">
+            <ShoppingCart size={22} />
+
+            {/* Cart Count */}
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+              0
+            </span>
+          </Link>
         </div>
 
 

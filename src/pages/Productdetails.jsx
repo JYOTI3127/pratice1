@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Heart, Star, ChevronLeft, ChevronRight, Check, Truck, Shield, RefreshCw } from 'lucide-react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const ProductDetailsPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -7,6 +9,7 @@ const ProductDetailsPage = () => {
   const [selectedColor, setSelectedColor] = useState('Navy');
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
+
 
   const product = {
     name: 'Premium Cotton T-Shirt',
@@ -16,11 +19,11 @@ const ProductDetailsPage = () => {
     reviewCount: 328,
     inStock: true,
     images: [
-           "https://astrotalk.store/cdn/shop/files/1_1f120004-c0c6-45a4-b8a8-1f103580d1c2_large.webp?v=1768994904",
-           "https://astrotalk.store/cdn/shop/files/11_1_7c0d48ca-3160-477b-bdf4-405cd2002915_large.webp?v=1764246692",
-          "https://astrotalk.store/cdn/shop/files/1_2_6_large.webp?v=1764679096",
-       "https://astrotalk.store/cdn/shop/files/raw_selenite_free_1_large.webp?v=1758524005",
-        "https://astrotalk.store/cdn/shop/files/dhan_prapti_combo_2_large.webp?v=1766464921",
+      "https://astrotalk.store/cdn/shop/files/1_1f120004-c0c6-45a4-b8a8-1f103580d1c2_large.webp?v=1768994904",
+      "https://astrotalk.store/cdn/shop/files/11_1_7c0d48ca-3160-477b-bdf4-405cd2002915_large.webp?v=1764246692",
+      "https://astrotalk.store/cdn/shop/files/1_2_6_large.webp?v=1764679096",
+      "https://astrotalk.store/cdn/shop/files/raw_selenite_free_1_large.webp?v=1758524005",
+      "https://astrotalk.store/cdn/shop/files/dhan_prapti_combo_2_large.webp?v=1766464921",
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     colors: [
@@ -73,7 +76,7 @@ const ProductDetailsPage = () => {
                 alt={`${product.name} - view ${selectedImage + 1}`}
                 className="w-full h-full object-cover"
               />
-              
+
               {/* Navigation Arrows */}
               <button
                 onClick={handlePrevImage}
@@ -102,11 +105,10 @@ const ProductDetailsPage = () => {
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedImage === index
-                      ? 'border-blue-600 ring-2 ring-blue-200'
-                      : 'border-gray-200 hover:border-gray-300'
-                  }`}
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedImage === index
+                    ? 'border-blue-600 ring-2 ring-blue-200'
+                    : 'border-gray-200 hover:border-gray-300'
+                    }`}
                   aria-label={`View image ${index + 1}`}
                 >
                   <img
@@ -129,11 +131,10 @@ const ProductDetailsPage = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`w-5 h-5 ${
-                        i < Math.floor(product.rating)
-                          ? 'fill-yellow-400 text-yellow-400'
-                          : 'text-gray-300'
-                      }`}
+                      className={`w-5 h-5 ${i < Math.floor(product.rating)
+                        ? 'fill-yellow-400 text-yellow-400'
+                        : 'text-gray-300'
+                        }`}
                     />
                   ))}
                 </div>
@@ -194,11 +195,10 @@ const ProductDetailsPage = () => {
               </button>
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className={`px-4 py-4 border-2 rounded-lg transition-all ${
-                  isWishlisted
-                    ? 'border-red-500 bg-red-50'
-                    : 'border-gray-300 hover:border-gray-400'
-                }`}
+                className={`px-4 py-4 border-2 rounded-lg transition-all ${isWishlisted
+                  ? 'border-red-500 bg-red-50'
+                  : 'border-gray-300 hover:border-gray-400'
+                  }`}
                 aria-label="Add to wishlist"
               >
                 <Heart
@@ -246,7 +246,29 @@ const ProductDetailsPage = () => {
             </div>
           </div>
         </div>
+        <div>
+          <Tabs>
+            <TabList>
+              <Tab>How to wear?</Tab>
+              <Tab>Packaging</Tab>
+            </TabList>
+
+            <TabPanel>
+              <h2>1. Wear on your 𝗿𝗶𝗴𝗵𝘁 𝘄𝗿𝗶𝘀𝘁 for optimal energy flow.</h2>
+              <h2>2. Start wearing it every morning and set your daily intentions.</h2>
+              <h2>3. Wear on 𝗙𝗿𝗶𝗱𝗮𝘆𝘀 to align with the energy of wealth.</h2>
+              <h2>4. Match with bright outfits for prosperity.</h2>
+
+            </TabPanel>
+            <TabPanel>
+              <h2>Presented in an sturdy black kappa box with foam, designed especially for safekeeping and gifting.</h2>
+            </TabPanel>
+          </Tabs>
+        </div>
       </div>
+
+
+
     </div>
   );
 };

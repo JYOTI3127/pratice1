@@ -1,6 +1,6 @@
 import React from 'react'
 import { sections } from "../Data/Data";
-import SectionSlider from "./Slider";
+import SectionSlider from "../components/Slider";
 
 const VastuBalance = () => {
 const VastuBalanceSection = sections.find(
