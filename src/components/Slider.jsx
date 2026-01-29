@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import Card from "./Card";
 
-const SectionSlider = ({ section }) => {
+const SectionSlider = () => {
   const sliderRef = useRef(null);
-
+  const data = ProductData.find(
+    (section) => section.name === "Best Sellers"
+  );
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -13,7 +15,7 @@ const SectionSlider = ({ section }) => {
     const interval = setInterval(() => {
       if (!slider.firstChild) return;
 
-      const cardWidth = slider.firstChild.offsetWidth + 16; 
+      const cardWidth = slider.firstChild.offsetWidth + 16;
       scrollPos += cardWidth;
 
       // Infinite loop
@@ -28,24 +30,22 @@ const SectionSlider = ({ section }) => {
     return () => clearInterval(interval);
   }, []);
 
+
   return (
     <div className="my-10"
     >
       <h2 className="text-3xl font-bold mb-8 text-center">
-        {section.name}
+        Best Sellers
       </h2>
-
       <div
         ref={sliderRef}
         className="flex gap-4 overflow-x-hidden hide-scrollbar px-3"
       >
-        {section.items.map((item, idx) => (
+        {data.items.map((item, idx) => (
           <Card key={idx} item={item} />
         ))}
 
-        {/* {section.items.map((item, idx) => (
-          <Card key={`dup-${idx}`} item={item} />
-        ))} */}
+
       </div>
     </div>
   );

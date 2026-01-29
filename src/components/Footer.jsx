@@ -9,7 +9,7 @@ import logo from "../assets/logo.png";
 const Footer = () => {
   return (
     <footer className='bg-accent-foreground pt-10 pb-0 bg-[#f7f5f2] border-t border-gray-300 mt-10'>
-      <div className="container pl-15 ">
+      <div className="container pl-4 lg:pl-[15px]">
         <div>
           <div className="border-b border-gray-500 pb-4 mb-4">
             <Link to="/">
@@ -163,25 +163,25 @@ const Footer = () => {
                 </h2>
 
                 <ul className="mt-3 space-y-2">
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Collaboration</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Tarot</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ]">
                     <Link to="">Zodiac Signs</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Vastu Shastra</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Love Calculator</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Guru Purnima 2025</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Astrotalk Sitemap</Link>
                   </li>
                 </ul>
@@ -194,40 +194,40 @@ const Footer = () => {
                 </h2>
 
                 <ul className="mt-3 space-y-2">
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Evil Eye</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ]">
                     <Link to="">Rudraksha</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Karungali</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Buy Gemstones</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Pyrite</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Selenite</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Rudraksha Bracelet For Men</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Rudraksha Bracelet For Women</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Murtis and Idols</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Raw Pyrite Stone</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[#FFC000]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Money Magnet Bracelet</Link>
                   </li>
-                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
+                  <li className="text-sm text-black transition-all duration-300 hover:translate-x-2 ">
                     <Link to="">Joint Pain Oil</Link>
                   </li>
                 </ul>

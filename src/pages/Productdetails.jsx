@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ShoppingCart, Heart, Star, ChevronLeft, ChevronRight, Check, Truck, Shield, RefreshCw } from 'lucide-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { useParams } from 'react-router-dom';
+import { products } from "../Data/Data";
 
 const ProductDetailsPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -54,6 +56,14 @@ const ProductDetailsPage = () => {
     setQuantity((prev) => Math.max(1, prev + delta));
   };
 
+  const { id } = useParams();
+  const productId = Number(id);
+  const singleProduct = products.find((ele) => ele.id === productId);
+  if (!singleProduct) {
+    return <div>Product not found!</div>;
+  }
+
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -72,8 +82,8 @@ const ProductDetailsPage = () => {
             {/* Main Image */}
             <div className="relative aspect-square bg-white rounded-lg overflow-hidden group">
               <img
-                src={product.images[selectedImage]}
-                alt={`${product.name} - view ${selectedImage + 1}`}
+                src={singleProduct.image}
+                alt={`${singleProduct.name} - view ${selectedImage + 1}`}
                 className="w-full h-full object-cover"
               />
 
@@ -100,7 +110,7 @@ const ProductDetailsPage = () => {
             </div>
 
             {/* Thumbnail Gallery */}
-            <div className="grid grid-cols-5 gap-4">
+            {/* <div className="grid grid-cols-5 gap-4">
               {product.images.map((image, index) => (
                 <button
                   key={index}
@@ -118,14 +128,14 @@ const ProductDetailsPage = () => {
                   />
                 </button>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Product Info */}
           <div className="space-y-6">
             {/* Title and Rating */}
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">{singleProduct.name}</h1>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
@@ -270,7 +280,9 @@ const ProductDetailsPage = () => {
 
 
     </div>
+
   );
+
 };
 
 export default ProductDetailsPage;

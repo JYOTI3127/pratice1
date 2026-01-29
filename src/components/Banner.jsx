@@ -1,51 +1,66 @@
-import React, { useEffect, useState } from "react";
-
-const images = [
-  "https://astrotalk.store/cdn/shop/files/gofting_collection_banner_copy.webp?v=1767525632&width=1500",
-  "https://astrotalk.store/cdn/shop/files/New_Year_Banner_1.jpg?v=1766582806&width=1500",
-  "https://astrotalk.store/cdn/shop/files/website_5adf83bb-7c50-433a-8b96-189e25f4cb5e.webp?v=1765947237&width=1500",
-"https://astrotalk.store/cdn/shop/files/Maha_lakshmi_siddhi_products_banner_web_copy_803061bc-e9bb-42aa-9072-5fe799c7a7de.webp?v=1766725246&width=1500",
-"https://astrotalk.store/cdn/shop/files/Website_c3e31df0-f3b2-475d-804b-7e37bb391081.webp?v=1749733315&width=1500"
-
-];
+import { useEffect, useState } from "react";
+import { bannerImages } from "../Data/Data";
 
 const Banner = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % bannerImages.length);
     }, 3000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full h-[500px] overflow-hidden relative">
-      {images.map((img, index) => (
-        <img
-          key={index}
-          src={img}
-          alt="banner"
-          className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-700 ${
-            current === index ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+    <section className="  h-[600px] bg-[#faf7f2] px-6 md:pl-20 flex flex-col md:flex-row items-center gap-10">
 
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-3 h-3 rounded-full ${
-              current === i ? "bg-white" : "bg-white/50"
-            }`}
-          ></button>
-        ))}
+      {/* LEFT : 50% TEXT */}
+      <div className="w-full md:w-1/2 max-w-xl">
+        {/* <span className="inline-block bg-[#ead7bf] text-[#9a6a3a] text-xs px-4 py-1 mb-5">
+          NEW ARRIVAL...
+        </span> */}
+
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-gray-900">
+         Astro-Energized <br />Living Spaces
+        </h1>
+
+        <p className="text-gray-600 mb-8 text-sm md:text-base">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+        </p>
+
+        <div className="flex gap-4">
+          <button className="bg-[#c08a4b] text-white px-6 py-3 text-sm hover:bg-[#a9743c] transition">
+            BUY NOW →
+          </button>
+          <button className="border border-[#c08a4b] text-[#c08a4b] px-6 py-3 text-sm hover:bg-[#c08a4b] hover:text-white transition">
+            VIEW DETAILS →
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* RIGHT : 50% IMAGE */}
+      <div className="w-full md:w-1/2 relative flex items-center justify-center mt-10 md:mt-0">
+
+        {/* Sliding Image (badi) */}
+        <img
+          src={bannerImages[current].img}
+          alt="Banner"
+          className="relative z-10
+  w-full
+  md:w-[600px]
+  lg:w-[600px]
+  h-[400px]
+  md:h-[450px]
+  object-cover
+  rounded-lg
+  shadow-lg
+  transition-all duration-700 ease-in-out
+  animate-spin-slow"
+
+        />
+      </div>
+    </section>
   );
 };
 

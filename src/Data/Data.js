@@ -8,6 +8,7 @@ export const sections = [
         id: 1,
         name: "Dhan Yog Product 1",
         price: 499,
+        name: "Best Sellers",
         originalPrice: 699,
         rating: 4.5,
         image:
@@ -40,8 +41,8 @@ export const sections = [
         image:
           "https://astrotalk.store/cdn/shop/files/raw_selenite_free_1_large.webp?v=1758524005",
       },
-            {
-        id: 4,
+      {
+        id: 5,
         name: "Dhan Yog Product 4",
         price: 499,
         originalPrice: 749,
@@ -55,7 +56,7 @@ export const sections = [
     name: "Combo Deals",
     items: [
       {
-        id: 5,
+        id: 6,
         name: "New Arrival 1",
         price: 299,
         originalPrice: 499,
@@ -64,7 +65,7 @@ export const sections = [
           "https://astrotalk.store/cdn/shop/files/dhan_prapti_combo_2_large.webp?v=1766464921",
       },
       {
-        id: 6,
+        id: 7,
         name: "New Arrival 2",
         price: 599,
         originalPrice: 799,
@@ -73,7 +74,7 @@ export const sections = [
           "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
       },
       {
-        id: 7,
+        id: 8,
         name: "New Arrival 3",
         price: 799,
         originalPrice: 999,
@@ -82,7 +83,7 @@ export const sections = [
           "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
       },
       {
-        id: 8,
+        id: 9,
         name: "New Arrival 4",
         price: 699,
         originalPrice: 899,
@@ -91,7 +92,7 @@ export const sections = [
           "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
       },
       {
-        id: 9,
+        id: 10,
         name: "New Arrival 5",
         price: 899,
         originalPrice: 1099,
@@ -100,7 +101,7 @@ export const sections = [
           "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
       },
       {
-        id: 10,
+        id: 11,
         name: "New Arrival 6",
         price: 999,
         originalPrice: 1299,
@@ -115,7 +116,7 @@ export const sections = [
     name: "Trending",
     items: [
       {
-        id: 11,
+        id: 12,
         name: "Trending 1",
         price: 399,
         originalPrice: 599,
@@ -124,7 +125,7 @@ export const sections = [
           "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
       },
       {
-        id: 12,
+        id: 13,
         name: "Trending 2",
         price: 499,
         originalPrice: 699,
@@ -138,52 +139,40 @@ export const sections = [
   {
     name: "Rudraksha",
     items: [
-      { id: 13, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" },
-      { id: 14, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" },
-      { id: 15, name: "Dhan Yog Product 3", price: 8399, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" },
-      { id: 16, name: "Dhan Yog Product 4", price: 8999, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" },
+      { id: 14, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" },
+      { id: 15, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" },
+      { id: 16, name: "Dhan Yog Product 3", price: 8399, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" },
+      { id: 17, name: "Dhan Yog Product 4", price: 8999, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" },
     ],
   },
   {
     name: "Vastu Balance",
     items: [
-      { id: 13, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" },
-      { id: 14, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" },
-      { id: 15, name: "Dhan Yog Product 3", price: 8399, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" },
-      { id: 16, name: "Dhan Yog Product 4", price: 8999, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" },
+      { id: 18, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" },
+      { id: 19, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" },
+      { id: 20, name: "Dhan Yog Product 3", price: 8399, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" },
+      { id: 21, name: "Dhan Yog Product 4", price: 8999, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" },
     ],
   },
-
-  {
-    name: "Bracelets",
-    items: [
-      { id: 17, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_2_8_83c17436-2c40-4434-9bad-4faeab2bdec3_large.webp?v=1765861530" },
-      { id: 18, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_3_16_large.webp?v=1765865985" },
-      { id: 19, name: "Dhan Yog Product 3", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/anklet_with_rose_quartz_472530a4-d62c-4bfd-b1b3-878b64ad1c2e_large.webp?v=1758714627" },
-      { id: 20, name: "Dhan Yog Product 4", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_3_95eaa6ab-9431-48fd-b812-4ba15da074ae_large.webp?v=1764565464" },
-      { id: 21, name: "Dhan Yog Product 5", price: 1399, originalPrice: 2749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Artboard_3_2_19b3bc6d-aba8-4d54-be22-dade9c8b36f7_large.webp?v=1758713293" },
-    ],
-  },
-
   {
     name: "Karungali",
     items: [
-      { id: 22, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_3_7_large.webp?v=1764666474" },
-      { id: 23, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/Karungali_Rudraksha_Mala_1_large.webp?v=1765951149" },
-      { id: 24, name: "Dhan Yog Product 3", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/1_2_6_large.webp?v=1764679096" },
-      { id: 25, name: "Dhan Yog Product 4", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_1_17_large.webp?v=1764659944" },
-      { id: 26, name: "Dhan Yog Product 5", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/karungali_mala_6_mm_1ee55732-00b0-47d9-b0c7-d7a31f47d3a4_large.webp?v=1762842052" },
+      { id: 27, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/Artboard_7_1_9f636faf-eb42-4f02-a001-164b7f5f160a.webp?v=1758696669&width=450" },
+      { id: 28, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/Ghar_Ki_Samriddhi_Yantra_Combo_1a440e17-3d6a-4ff0-9f3e-771532c36feb.webp?v=1760355961&width=450" },
+      { id: 29, name: "Dhan Yog Product 3", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/dxvoeufbzvcm2gmpamgp.webp?v=1744568980&width=4506" },
+      { id: 30, name: "Dhan Yog Product 4", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Vyappar_Vriddhi_Yantra_Combo_943f913f-698b-4eea-80ba-32c38062b323.webp?v=1758474015&width=450" },
+      { id: 31, name: "Dhan Yog Product 5", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_34_cfe49b34-1ef6-4d54-abfd-7fbc39ecaf6f.webp?v=1758181814&width=450" },
     ],
   },
 
   {
     name: "Pyramids",
     items: [
-      { id: 27, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_1_14_large.webp?v=1764155890" },
-      { id: 28, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_28_f9cdcb9c-2e17-42e7-880f-bc2aee9417be_large.webp?v=1763105032" },
-      { id: 29, name: "Dhan Yog Product 3", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/Money_Magnet_1b_6_large.webp?v=1756831989" },
-      { id: 30, name: "Dhan Yog Product 4", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Laxmi_Yantra_1b_5_large.webp?v=1756831899" },
-      { id: 31, name: "Dhan Yog Product 5", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Rose_Quartz_1b_7_large.webp?v=1756832112" },
+      { id: 32, name: "Dhan Yog Product 1", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_1_14_large.webp?v=1764155890" },
+      { id: 33, name: "Dhan Yog Product 2", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_28_f9cdcb9c-2e17-42e7-880f-bc2aee9417be_large.webp?v=1763105032" },
+      { id: 34, name: "Dhan Yog Product 3", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/Money_Magnet_1b_6_large.webp?v=1756831989" },
+      { id: 35, name: "Dhan Yog Product 4", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Laxmi_Yantra_1b_5_large.webp?v=1756831899" },
+      { id: 36, name: "Dhan Yog Product 5", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Rose_Quartz_1b_7_large.webp?v=1756832112" },
     ],
   },
 
@@ -191,7 +180,7 @@ export const sections = [
     name: "Sidh Collection",
     items: [
       {
-        id: 1,
+        id: 37,
         name: "Sidh Bracelet 1",
         price: 699,
         originalPrice: 1499,
@@ -199,7 +188,7 @@ export const sections = [
         image: "https://astrotalk.store/cdn/shop/files/1_46_large.webp?v=1753510822",
       },
       {
-        id: 2,
+        id: 38,
         name: "Sidh Bracelet 2",
         price: 799,
         originalPrice: 1599,
@@ -207,7 +196,7 @@ export const sections = [
         image: "https://astrotalk.store/cdn/shop/files/1_51_large.webp?v=1753513321",
       },
       {
-        id: 3,
+        id: 39,
         name: "Sidh Bracelet 3",
         price: 899,
         originalPrice: 1799,
@@ -215,7 +204,7 @@ export const sections = [
         image: "https://astrotalk.store/cdn/shop/files/1_41_large.webp?v=1753508776",
       },
       {
-        id: 4,
+        id: 40,
         name: "Sidh Bracelet 4",
         price: 999,
         originalPrice: 1999,
@@ -250,7 +239,7 @@ export const galleryItems = [
 ];
 
 // ---- product ----
-export const product = [
+export const products = [
   {
     id: 1,
     name: "Raw Pyrite Bracelet",
@@ -291,179 +280,179 @@ export const product = [
     discount: "36% OFF",
     image: "https://cdn.shopify.com/s/files/1/0878/4907/4985/files/i4m11zy4smqqeiswaosr.webp?v=1743143473",
   },
-  { 
-    id: 1, 
-    name: "Ruby (Manik)", 
-    image: "https://astrotalk.store/cdn/shop/files/Pukhraj_7_large.png?v=1762147587", 
+  {
+    id: 6,
+    name: "Ruby (Manik)",
+    image: "https://astrotalk.store/cdn/shop/files/Pukhraj_7_large.png?v=1762147587",
     benefit: "Confidence, leadership & success",
     price: 499,
     originalPrice: 699,
     discount: "28% OFF"
   },
-  { 
-    id: 2, 
-    name: "Emerald (Panna)", 
-    image: "https://astrotalk.store/cdn/shop/files/Emerald_Panna_large.png?v=1762147589", 
+  {
+    id: 7,
+    name: "Emerald (Panna)",
+    image: "https://astrotalk.store/cdn/shop/files/Emerald_Panna_large.png?v=1762147589",
     benefit: "Intelligence, communication & focus",
     price: 599,
     originalPrice: 899,
     discount: "33% OFF"
   },
-  { 
-    id: 3, 
-    name: "Yellow Sapphire (Pukhraj)", 
-    image: "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587", 
+  {
+    id: 8,
+    name: "Yellow Sapphire (Pukhraj)",
+    image: "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587",
     benefit: "Wealth, wisdom & prosperity",
     price: 699,
     originalPrice: 999,
     discount: "30% OFF"
   },
-  { 
-    id: 5, 
-    name: "Pearl (Moti)", 
-    image: "https://astrotalk.store/cdn/shop/files/Neelam_5_large.png?v=1762147588", 
+  {
+    id: 9,
+    name: "Pearl (Moti)",
+    image: "https://astrotalk.store/cdn/shop/files/Neelam_5_large.png?v=1762147588",
     benefit: "Peace, emotional balance & calm mind",
     price: 399,
     originalPrice: 599,
     discount: "33% OFF"
   },
-    { 
-    id: 13, 
-    name: "Dhan Yog Product 1", 
-    price: 699, 
-    originalPrice: 699, 
-    rating: 4.5, 
-    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" 
+  {
+    id: 10,
+    name: "Dhan Yog Product 1",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
   },
-  { 
-    id: 14, 
-    name: "Dhan Yog Product 2", 
-    price: 599, 
-    originalPrice: 899, 
-    rating: 4.0, 
-    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" 
+  {
+    id: 11,
+    name: "Dhan Yog Product 2",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
   },
-  { 
-    id: 15, 
-    name: "Dhan Yog Product 3", 
-    price: 8399, 
-    originalPrice: 599, 
-    rating: 4.2, 
-    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" 
+  {
+    id: 12,
+    name: "Dhan Yog Product 3",
+    price: 8399,
+    originalPrice: 599,
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225"
   },
-  { 
-    id: 16, 
-    name: "Dhan Yog Product 4", 
-    price: 8999, 
-    originalPrice: 749, 
-    rating: 4.7, 
-    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" 
+  {
+    id: 13,
+    name: "Dhan Yog Product 4",
+    price: 8999,
+    originalPrice: 749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377"
   },
-    { 
-    id: 13, 
-    name: "Dhan Yog Product 1", 
-    price: 699, 
-    originalPrice: 699, 
-    rating: 4.5, 
-    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" 
+  {
+    id: 14,
+    name: "Dhan Yog Product 1",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
   },
-  { 
-    id: 14, 
-    name: "Dhan Yog Product 2", 
-    price: 599, 
-    originalPrice: 899, 
-    rating: 4.0, 
-    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" 
+  {
+    id: 15,
+    name: "Dhan Yog Product 2",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
   },
 ];
 
 // ---- gemstones ----
 export const gemstones = [
-  { 
-    id: 1, 
-    name: "Ruby (Manik)", 
-    image: "https://astrotalk.store/cdn/shop/files/Pukhraj_7_large.png?v=1762147587", 
+  {
+    id: 1,
+    name: "Ruby (Manik)",
+    image: "https://astrotalk.store/cdn/shop/files/Pukhraj_7_large.png?v=1762147587",
     benefit: "Confidence, leadership & success",
     price: 499,
     originalPrice: 699,
     discount: "28% OFF"
   },
-  { 
-    id: 2, 
-    name: "Emerald (Panna)", 
-    image: "https://astrotalk.store/cdn/shop/files/Emerald_Panna_large.png?v=1762147589", 
+  {
+    id: 2,
+    name: "Emerald (Panna)",
+    image: "https://astrotalk.store/cdn/shop/files/Emerald_Panna_large.png?v=1762147589",
     benefit: "Intelligence, communication & focus",
     price: 599,
     originalPrice: 899,
     discount: "33% OFF"
   },
-  { 
-    id: 3, 
-    name: "Yellow Sapphire (Pukhraj)", 
-    image: "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587", 
+  {
+    id: 3,
+    name: "Yellow Sapphire (Pukhraj)",
+    image: "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587",
     benefit: "Wealth, wisdom & prosperity",
     price: 699,
     originalPrice: 999,
     discount: "30% OFF"
   },
-  { 
-    id: 4, 
-    name: "Blue Sapphire (Neelam)", 
-    image: "https://astrotalk.store/cdn/shop/files/Fire-Opal_5_large.png?v=1762147587", 
+  {
+    id: 4,
+    name: "Blue Sapphire (Neelam)",
+    image: "https://astrotalk.store/cdn/shop/files/Fire-Opal_5_large.png?v=1762147587",
     benefit: "Success, protection & discipline",
     price: 799,
     originalPrice: 1199,
     discount: "33% OFF"
   },
-  { 
-    id: 5, 
-    name: "Pearl (Moti)", 
-    image: "https://astrotalk.store/cdn/shop/files/Neelam_5_large.png?v=1762147588", 
+  {
+    id: 5,
+    name: "Pearl (Moti)",
+    image: "https://astrotalk.store/cdn/shop/files/Neelam_5_large.png?v=1762147588",
     benefit: "Peace, emotional balance & calm mind",
     price: 399,
     originalPrice: 599,
     discount: "33% OFF"
   },
-  { 
-    id: 6, 
-    name: "Red Coral (Moonga)", 
-    image: "https://astrotalk.store/cdn/shop/files/South-Sea-Pearl_4_large.png?v=1762147587", 
+  {
+    id: 6,
+    name: "Red Coral (Moonga)",
+    image: "https://astrotalk.store/cdn/shop/files/South-Sea-Pearl_4_large.png?v=1762147587",
     benefit: "Energy, courage & strength",
     price: 549,
     originalPrice: 799,
     discount: "31% OFF"
   },
-  { 
-    id: 7, 
-    name: "Hessonite (Gomed)", 
-    image: "https://astrotalk.store/cdn/shop/files/Hessonite_4_large.png?v=1762147589", 
+  {
+    id: 7,
+    name: "Hessonite (Gomed)",
+    image: "https://astrotalk.store/cdn/shop/files/Hessonite_4_large.png?v=1762147589",
     benefit: "Stability, clarity & protection from negativity",
     price: 649,
     originalPrice: 999,
     discount: "35% OFF"
   },
-  { 
-    id: 8, 
-    name: "Cat’s Eye (Lehsunia)", 
-    image: "https://astrotalk.store/cdn/shop/files/Amethyst_5_large.png?v=1762147592", 
+  {
+    id: 8,
+    name: "Cat’s Eye (Lehsunia)",
+    image: "https://astrotalk.store/cdn/shop/files/Amethyst_5_large.png?v=1762147592",
     benefit: "Sudden gains & spiritual growth",
     price: 799,
     originalPrice: 1099,
     discount: "27% OFF"
   },
-    { 
-    id: 3, 
-    name: "Yellow Sapphire (Pukhraj)", 
-    image: "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587", 
+  {
+    id: 3,
+    name: "Yellow Sapphire (Pukhraj)",
+    image: "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587",
     benefit: "Wealth, wisdom & prosperity",
     price: 699,
     originalPrice: 999,
     discount: "30% OFF"
   },
-  { 
-    id: 4, 
-    name: "Blue Sapphire (Neelam)", 
-    image: "https://astrotalk.store/cdn/shop/files/Fire-Opal_5_large.png?v=1762147587", 
+  {
+    id: 4,
+    name: "Blue Sapphire (Neelam)",
+    image: "https://astrotalk.store/cdn/shop/files/Fire-Opal_5_large.png?v=1762147587",
     benefit: "Success, protection & discipline",
     price: 799,
     originalPrice: 1199,
@@ -473,85 +462,85 @@ export const gemstones = [
 
 
 export const rudraksha = [
-  { 
-    id: 13, 
-    name: "Dhan Yog Product 1", 
-    price: 699, 
-    originalPrice: 699, 
-    rating: 4.5, 
-    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" 
+  {
+    id: 13,
+    name: "Dhan Yog Product 1",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
   },
-  { 
-    id: 14, 
-    name: "Dhan Yog Product 2", 
-    price: 599, 
-    originalPrice: 899, 
-    rating: 4.0, 
-    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" 
+  {
+    id: 14,
+    name: "Dhan Yog Product 2",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
   },
-  { 
-    id: 15, 
-    name: "Dhan Yog Product 3", 
-    price: 8399, 
-    originalPrice: 599, 
-    rating: 4.2, 
-    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" 
+  {
+    id: 15,
+    name: "Dhan Yog Product 3",
+    price: 8399,
+    originalPrice: 599,
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225"
   },
-  { 
-    id: 16, 
-    name: "Dhan Yog Product 4", 
-    price: 8999, 
-    originalPrice: 749, 
-    rating: 4.7, 
-    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" 
+  {
+    id: 16,
+    name: "Dhan Yog Product 4",
+    price: 8999,
+    originalPrice: 749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377"
   },
-    { 
-    id: 13, 
-    name: "Dhan Yog Product 1", 
-    price: 699, 
-    originalPrice: 699, 
-    rating: 4.5, 
-    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" 
+  {
+    id: 13,
+    name: "Dhan Yog Product 1",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
   },
-  { 
-    id: 14, 
-    name: "Dhan Yog Product 2", 
-    price: 599, 
-    originalPrice: 899, 
-    rating: 4.0, 
-    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" 
+  {
+    id: 14,
+    name: "Dhan Yog Product 2",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
   },
-  { 
-    id: 15, 
-    name: "Dhan Yog Product 3", 
-    price: 8399, 
-    originalPrice: 599, 
-    rating: 4.2, 
-    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225" 
+  {
+    id: 15,
+    name: "Dhan Yog Product 3",
+    price: 8399,
+    originalPrice: 599,
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225"
   },
-  { 
-    id: 16, 
-    name: "Dhan Yog Product 4", 
-    price: 8999, 
-    originalPrice: 749, 
-    rating: 4.7, 
-    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377" 
+  {
+    id: 16,
+    name: "Dhan Yog Product 4",
+    price: 8999,
+    originalPrice: 749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377"
   },
-    { 
-    id: 13, 
-    name: "Dhan Yog Product 1", 
-    price: 699, 
-    originalPrice: 699, 
-    rating: 4.5, 
-    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834" 
+  {
+    id: 13,
+    name: "Dhan Yog Product 1",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
   },
-  { 
-    id: 14, 
-    name: "Dhan Yog Product 2", 
-    price: 599, 
-    originalPrice: 899, 
-    rating: 4.0, 
-    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522" 
+  {
+    id: 14,
+    name: "Dhan Yog Product 2",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
   },
 
 ];
@@ -597,7 +586,7 @@ export const pyramids = [
     rating: 4.7,
     image: "https://astrotalk.store/cdn/shop/files/Rose_Quartz_1b_7_large.webp?v=1756832112",
   },
-    {
+  {
     id: 27,
     name: "Dhan Yog Product 1",
     price: 699,
@@ -704,7 +693,7 @@ export const sidhCollection = [
     rating: 4.8,
     image: "https://astrotalk.store/cdn/shop/files/1_38_large.webp?v=1753508224",
   },
-    {
+  {
     id: 1,
     name: "Sidh Bracelet 1",
     price: 699,
@@ -722,5 +711,448 @@ export const sidhCollection = [
   },
 ];
 
+
+export const ProductData = [
+
+  {
+    id: 1,
+    category: "Best Sellers",
+    name: "Dhan Yog Product 1",
+    price: 499,
+    name: "Best Sellers",
+    originalPrice: 699,
+    rating: 4.5,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_1f120004-c0c6-45a4-b8a8-1f103580d1c2_large.webp?v=1768994904",
+  },
+  {
+    id: 2,
+    category: "Best Sellers",
+    name: "Dhan Yog Product 2",
+    price: 699,
+    originalPrice: 899,
+    rating: 4.0,
+    image:
+      "https://astrotalk.store/cdn/shop/files/11_1_7c0d48ca-3160-477b-bdf4-405cd2002915_large.webp?v=1764246692",
+  },
+  {
+    id: 3,
+    category: "Best Sellers",
+    name: "Dhan Yog Product 3",
+    price: 399,
+    originalPrice: 599,
+    rating: 4.2,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_2_6_large.webp?v=1764679096",
+  },
+  {
+    id: 4,
+    category: "Best Sellers",
+    name: "Dhan Yog Product 4",
+    price: 499,
+    originalPrice: 749,
+    rating: 4.7,
+    image:
+      "https://astrotalk.store/cdn/shop/files/raw_selenite_free_1_large.webp?v=1758524005",
+  },
+  {
+    id: 5,
+    category: "Best Sellers",
+    name: "Dhan Yog Product 4",
+    price: 499,
+    originalPrice: 749,
+    rating: 4.7,
+    image:
+      "https://astrotalk.store/cdn/shop/files/raw_selenite_free_1_large.webp?v=1758524005",
+  },
+
+  {
+    id: 6,
+    category: "Combo Deals",
+    name: "New Arrival 1",
+    price: 299,
+    originalPrice: 499,
+    rating: 4.3,
+    image:
+      "https://astrotalk.store/cdn/shop/files/dhan_prapti_combo_2_large.webp?v=1766464921",
+  },
+  {
+    id: 7,
+    category: "Combo Deals",
+    name: "New Arrival 2",
+    price: 599,
+    originalPrice: 799,
+    rating: 4.6,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+  {
+    id: 8,
+    category: "Combo Deals",
+    name: "New Arrival 3",
+    price: 799,
+    originalPrice: 999,
+    rating: 4.8,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+  {
+    id: 9,
+    category: "Combo Deals",
+    name: "New Arrival 4",
+    price: 699,
+    originalPrice: 899,
+    rating: 4.4,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+  {
+    id: 10,
+    category: "Combo Deals",
+    name: "New Arrival 5",
+    price: 899,
+    originalPrice: 1099,
+    rating: 4.6,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+  {
+    id: 11,
+    category: "Combo Deals",
+    name: "New Arrival 6",
+    price: 999,
+    originalPrice: 1299,
+    rating: 4.7,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+
+  {
+    id: 12,
+    category: "Trending",
+    name: "Trending 1",
+    price: 399,
+    originalPrice: 599,
+    rating: 4.1,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+  {
+    id: 13,
+    category: "Trending",
+    name: "Trending 2",
+    price: 499,
+    originalPrice: 699,
+    rating: 4.4,
+    image:
+      "https://astrotalk.store/cdn/shop/files/1_ef944c17-dd29-443a-a609-bf3b07fa5bf7_large.jpg?v=1768908284",
+  },
+
+  {
+    id: 14,
+    category: "Rudraksha",
+    name: "Dhan Yog Product 1",
+    price: 699, originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
+  },
+  {
+    id: 15,
+    category: "Rudraksha",
+    name: "Dhan Yog Product 2",
+    price: 599, originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
+  },
+  {
+    id: 16,
+    category: "Rudraksha",
+    name: "Dhan Yog Product 3",
+    price: 8399,
+    originalPrice: 599,
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225"
+  },
+  {
+    id: 17,
+    category: "Rudraksha",
+    name: "Dhan Yog Product 4",
+    price: 8999,
+    originalPrice: 749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377"
+  },
+
+  {
+    id: 18,
+    category: "Vastu Balance",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_8_large.webp?v=1751002834"
+  },
+  {
+    id: 19,
+    category: "Vastu Balance",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_6_large.webp?v=1751001522"
+  },
+  {
+    id: 20,
+    category: "Vastu Balance",
+    price: 8399,
+    originalPrice: 599,
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/1_a144e37f-680e-430f-80bd-e7c35b9d2ebb_large.webp?v=1759924225"
+  },
+  {
+    id: 21,
+    category: "Vastu Balance",
+    price: 8999,
+    originalPrice: 749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_17_86a605b9-8184-4221-bca8-206dca048a13_large.webp?v=1751009377"
+  },
+
+  { id: 22, category: "Bracelets", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_2_8_83c17436-2c40-4434-9bad-4faeab2bdec3_large.webp?v=1765861530" },
+  { id: 23, category: "Bracelets", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_3_16_large.webp?v=1765865985" },
+  { id: 24, category: "Bracelets", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/anklet_with_rose_quartz_472530a4-d62c-4bfd-b1b3-878b64ad1c2e_large.webp?v=1758714627" },
+  { id: 25, category: "Bracelets", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/1_3_95eaa6ab-9431-48fd-b812-4ba15da074ae_large.webp?v=1764565464" },
+  { id: 26, category: "Bracelets", price: 1399, originalPrice: 2749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Artboard_3_2_19b3bc6d-aba8-4d54-be22-dade9c8b36f7_large.webp?v=1758713293" },
+
+  { id: 27, category: "Karungali", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/Artboard_7_1_9f636faf-eb42-4f02-a001-164b7f5f160a.webp?v=1758696669&width=450" },
+  { id: 28, category: "Karungali", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/Ghar_Ki_Samriddhi_Yantra_Combo_1a440e17-3d6a-4ff0-9f3e-771532c36feb.webp?v=1760355961&width=450" },
+  { id: 29, category: "Karungali", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/dxvoeufbzvcm2gmpamgp.webp?v=1744568980&width=450" },
+  { id: 30, category: "Karungali", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Vyappar_Vriddhi_Yantra_Combo_943f913f-698b-4eea-80ba-32c38062b323.webp?v=1758474015&width=450" },
+  { id: 31, category: "Karungali", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Vyappar_Vriddhi_Yantra_Combo_943f913f-698b-4eea-80ba-32c38062b323.webp?v=1758474015&width=450" },
+
+  { id: 32, category: "Pyramids", price: 699, originalPrice: 699, rating: 4.5, image: "https://astrotalk.store/cdn/shop/files/1_1_14_large.webp?v=1764155890" },
+  { id: 33, category: "Pyramids", price: 599, originalPrice: 899, rating: 4.0, image: "https://astrotalk.store/cdn/shop/files/1_28_f9cdcb9c-2e17-42e7-880f-bc2aee9417be_large.webp?v=1763105032" },
+  { id: 34, category: "Pyramids", price: 999, originalPrice: 599, rating: 4.2, image: "https://astrotalk.store/cdn/shop/files/Money_Magnet_1b_6_large.webp?v=1756831989" },
+  { id: 35, category: "Pyramids", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Laxmi_Yantra_1b_5_large.webp?v=1756831899" },
+  { id: 36, category: "Pyramids", price: 1299, originalPrice: 749, rating: 4.7, image: "https://astrotalk.store/cdn/shop/files/Rose_Quartz_1b_7_large.webp?v=1756832112" },
+
+
+  {
+    id: 37,
+    category: "Sidh Collection",
+    name: "Sidh Bracelet 1",
+    price: 699,
+    originalPrice: 1499,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_46_large.webp?v=1753510822",
+  },
+  {
+    id: 38,
+    category: "Sidh Collection",
+    name: "Sidh Bracelet 2",
+    price: 799,
+    originalPrice: 1599,
+    rating: 4.6,
+    image: "https://astrotalk.store/cdn/shop/files/1_51_large.webp?v=1753513321",
+  },
+  {
+    id: 39,
+    category: "Sidh Collection",
+    name: "Sidh Bracelet 3",
+    price: 899,
+    originalPrice: 1799,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_41_large.webp?v=1753508776",
+  },
+  {
+    id: 40,
+    category: "Sidh Collection",
+    name: "Sidh Bracelet 4",
+    price: 999,
+    originalPrice: 1999,
+    rating: 4.8,
+    image: "https://astrotalk.store/cdn/shop/files/1_38_large.webp?v=1753508224",
+  },
+  {
+    id: 41,
+    category: "ComboBracelets",
+    name: "Combo Bracelet 1",
+    price: 1499,
+    originalPrice: 2499,
+    rating: 4.6,
+    image: "https://astrotalk.store/cdn/shop/files/Dhan_Vriddhi_Raw_Selenite_Plate.webp?v=1766581731&width=450",
+  },
+  {
+    id: 42,
+    category: "ComboBracelets",
+    name: "Combo Bracelet 2",
+    price: 1799,
+    originalPrice: 2999,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/Maha_Dhan_Yog_Comb_1.webp?v=1766381378&width=450",
+  },
+  {
+    id: 43,
+    category: "ComboBracelets",
+    name: "Combo Bracelet 3",
+    price: 1999,
+    originalPrice: 3499,
+    rating: 4.8,
+    image: "https://astrotalk.store/cdn/shop/files/1_bf2779f4-e5e2-41b2-810b-628123437a5e.jpg?v=1736429424&width=450",
+  },
+  {
+    id: 44,
+    category: "ComboBracelets",
+    name: "Combo Bracelet 4",
+    price: 1999,
+    originalPrice: 3499,
+    rating: 4.8,
+    image: "https://astrotalk.store/cdn/shop/files/1_240dd64d-0afa-4fdf-9eb2-6d19b1d9bd2e.webp?v=1747656628&width=450",
+  },
+];
+
+export const bannerImages = [
+  {
+    id: 1,
+    img: "https://astrotalk.store/cdn/shop/files/11_2198012a-c8ee-49d3-99b3-e593e8aa9a5f.webp?v=1766559451&width=750",
+  },
+  // {
+  //   id: 2,
+  //   img: "https://astrotalk.store/cdn/shop/files/1_4_bf1d5a54-47c8-404d-a525-34e1a7cfc6c2_large.webp?v=1769098532",
+  // },
+  // {
+  //   id: 3,
+  //   img: "https://astrotalk.store/cdn/shop/files/6748_f8bdf509-7569-4fc3-b3c3-c773e2c589f5.jpg?v=1727430190&width=375",
+  // },
+];
+
+export const Bracelets = [
+  {
+    id: 22,
+    name: "Dhan Yog Product 1",
+    price: 699,
+    originalPrice: 699,
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/1_2_8_83c17436-2c40-4434-9bad-4faeab2bdec3_large.webp?v=1765861530",
+  },
+  {
+    id: 23,
+    name: "Dhan Yog Product 2",
+    price: 599,
+    originalPrice: 899,
+    rating: 4.0,
+    image: "https://astrotalk.store/cdn/shop/files/1_3_16_large.webp?v=1765865985",
+  },
+  {
+    id: 24,
+    name: "Dhan Yog Product 3",
+    price: 999,
+    originalPrice: 599,
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/anklet_with_rose_quartz_472530a4-d62c-4bfd-b1b3-878b64ad1c2e_large.webp?v=1758714627",
+  },
+  {
+    id: 25,
+    name: "Dhan Yog Product 4",
+    price: 1299,
+    originalPrice: 749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/1_3_95eaa6ab-9431-48fd-b812-4ba15da074ae_large.webp?v=1764565464",
+  },
+  {
+    id: 26,
+    name: "Dhan Yog Product 5",
+    price: 1399,
+    originalPrice: 2749,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/Artboard_3_2_19b3bc6d-aba8-4d54-be22-dade9c8b36f7_large.webp?v=1758713293",
+  },
+];
+
+export const ComboBracelets = [
+  {
+    id: 101,
+    name: "Combo Bracelet 1",
+    price: 1499,
+    originalPrice: 2499,
+    rating: 4.6,
+    image: "https://astrotalk.store/cdn/shop/files/Dhan_Vriddhi_Raw_Selenite_Plate.webp?v=1766581731&width=450",
+  },
+  {
+    id: 102,
+    name: "Combo Bracelet 2",
+    price: 1799,
+    originalPrice: 2999,
+    rating: 4.7,
+    image: "https://astrotalk.store/cdn/shop/files/Maha_Dhan_Yog_Comb_1.webp?v=1766381378&width=450",
+  },
+  {
+    id: 103,
+    name: "Combo Bracelet 3",
+    price: 1999,
+    originalPrice: 3499,
+    rating: 4.8,
+    image: "https://astrotalk.store/cdn/shop/files/1_bf2779f4-e5e2-41b2-810b-628123437a5e.jpg?v=1736429424&width=450",
+  },
+  {
+    id: 104,
+    name: "Combo Bracelet 3",
+    price: 1999,
+    originalPrice: 3499,
+    rating: 4.8,
+    image: "https://astrotalk.store/cdn/shop/files/1_240dd64d-0afa-4fdf-9eb2-6d19b1d9bd2e.webp?v=1747656628&width=450",
+  },
+];
+
+export const YantraData = [
+  {
+    id: 1,
+    name: "Shree Yantra",
+    category: "Yantra",
+    price: 1299,
+    originalPrice: 2999,
+    discount: "57% OFF",
+    rating: 4.6,
+    image: "https://astrotalk.store/cdn/shop/files/Artboard_7_1_9f636faf-eb42-4f02-a001-164b7f5f160a.webp?v=1758696669&width=450",
+  },
+  {
+    id: 2,
+    name: "Kuber Yantra",
+    category: "Yantra",
+    price: 999,
+    originalPrice: 2499,
+    discount: "60% OFF",
+    rating: 4.4,
+    image: "https://astrotalk.store/cdn/shop/files/Ghar_Ki_Samriddhi_Yantra_Combo_1a440e17-3d6a-4ff0-9f3e-771532c36feb.webp?v=1760355961&width=450",
+  },
+  {
+    id: 3,
+    name: "Lakshmi Yantra",
+    category: "Yantra",
+    price: 1099,
+    originalPrice: 2799,
+    discount: "61% OFF",
+    rating: 4.5,
+    image: "https://astrotalk.store/cdn/shop/files/dxvoeufbzvcm2gmpamgp.webp?v=1744568980&width=450",
+  },
+  {
+    id: 4,
+    name: "Sudarshan Yantra",
+    category: "Yantra",
+    price: 899,
+    originalPrice: 1999,
+    discount: "55% OFF",
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/Vyappar_Vriddhi_Yantra_Combo_943f913f-698b-4eea-80ba-32c38062b323.webp?v=1758474015&width=450",
+  },
+  {
+    id: 5,
+    name: "Sudarshan Yantra",
+    category: "Yantra",
+    price: 899,
+    originalPrice: 1999,
+    discount: "55% OFF",
+    rating: 4.2,
+    image: "https://astrotalk.store/cdn/shop/files/1_34_cfe49b34-1ef6-4d54-abfd-7fbc39ecaf6f.webp?v=1758181814&width=450",
+  },
+];
 
 

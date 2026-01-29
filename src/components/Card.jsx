@@ -1,64 +1,75 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaStar } from "react-icons/fa";
+import { FaShoppingCart, FaStar, FaEye, FaRegStar } from "react-icons/fa";
 
 const Card = ({ item }) => {
   return (
-    <div className="bg-white rounded-xl overflow-hidden flex-shrink-0 w-[24%]
-      shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
+    <div className="bg-white rounded-xl overflow-hidden flex-shrink-0 w-full shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
 
-      {/* Image */}
-      <div className="overflow-hidden">
+      {/* IMAGE WRAPPER */}
+      <div className="relative overflow-hidden">
+
+        {/* Product Image */}
         <img
           src={item.image}
           alt={item.name}
-          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
         />
+
+        {/* HOVER ACTIONS */}
+        <div
+          className="
+            absolute inset-0 
+            bg-black/40 
+            flex items-center justify-center gap-4
+            opacity-0 
+            group-hover:opacity-100
+            transition-all duration-300
+          "
+        >
+          {/* Add to Cart with Link */}
+         <Link to={`/product/${item.id}`}>
+            <button className="bg-black text-white px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:bg-gray-800 transition">
+              <FaShoppingCart /> Cart
+            </button>
+          </Link>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-5 space-y-2">
-        <h2 className="text-base font-semibold text-gray-800 line-clamp-1">
+      {/* CONTENT */}
+      <div className="p-5 flex flex-col justify-between h-auto">
+        <h2 className="text-base font-semibold text-gray-800 mb-2">
           {item.name}
         </h2>
-
-        {/* Price */}
-        <div className="flex items-center gap-2">
-          <span className="text-red-600 font-bold text-lg">
-            ₹{item.price}
-          </span>
-          <span className="text-gray-400 line-through text-sm">
-            ₹{item.originalPrice}
-          </span>
-        </div>
-
-        {/* Rating */}
-        <div className="flex items-center gap-1 text-yellow-500 text-sm">
-          <FaStar />
-          <span>{item.rating}</span>
-        </div>
-
-        {/* Button */}
-        <Link to={`/product/${item.id}`}>
-          <button
-            style={{ WebkitTapHighlightColor: "transparent" }}
-            className="
-      mt-2 w-full
-      bg-black text-white py-2 rounded
-      flex items-center justify-center gap-2
-      transition-colors duration-200
-      focus:outline-none focus:ring-0
-      active:outline-none
-      shadow-none hover:shadow-none active:shadow-none
-      whitespace-nowrap cursor-pointer
-    "
-          >
-            Add to Cart
-          </button>
-        </Link>
-
+      {/* Price */}
+      <div className="flex items-center gap-2">
+        <span className="text-yellow-500  text-lg">
+          ₹{item.price}
+        </span>
+        <span className="text-gray-400 line-through text-sm">
+          ₹{item.originalPrice}
+        </span>
       </div>
+
+      {/* Rating */}
+      <div className="flex items-center gap-1 text-yellow-500 text-sm">
+        {[1, 2, 3, 4, 5].map((i) =>
+          i <= item.rating ? <FaStar key={i} /> : <FaRegStar key={i} />
+        )}
+        <span className="text-black ml-1">{item.rating}</span>
+      </div>
+
+      {/* MOBILE BUTTON (always visible) */}
+      <Link to={`/product/${item.id}`} state={{ product: item }}>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="mt-3 w-full bg-black text-white py-2 rounded flex items-center justify-center gap-2 text-sm sm:hidden"
+        >
+          <FaShoppingCart size={18} /> Add to Cart
+        </button>
+      </Link>
     </div>
+    </div >
   );
 };
 

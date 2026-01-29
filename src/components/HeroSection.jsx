@@ -13,7 +13,7 @@ const HeroSection = () => {
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className=" p-10 rounded-lg  max-w-md">
+        <div className=" sm:p-6 md:p-8 lg:p-10  rounded-lg  max-w-md">
           <p className="text-sm text-gray-500 mb-2">Best-Selling</p>
 
           <h1 className="text-3xl font-serif font-semibold leading-snug mb-4">
