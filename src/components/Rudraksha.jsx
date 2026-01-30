@@ -20,7 +20,7 @@ const Rudraksha = () => {
   }, []);
 
   return (
-    <section className="py-15 px-10">
+    <section className="py-10 px-5 md:py-15 md:px-10">
       <div className="container">
 
         <h2 className="text-3xl font-bold text-center mb-3">Rudraksha</h2>

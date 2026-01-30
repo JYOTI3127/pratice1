@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { ShoppingCart, Heart, Star, ChevronLeft, ChevronRight, Check, Truck, Shield, RefreshCw } from 'lucide-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { useParams } from 'react-router-dom';
-import { products } from "../Data/Data";
+import { useParams, useLocation } from 'react-router-dom';
+import { products, ProductData } from "../Data/Data";
 
 const ProductDetailsPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -12,56 +12,28 @@ const ProductDetailsPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
+  const { id } = useParams();
+  const location = useLocation();
+  const productId = Number(id);
 
-  const product = {
-    name: 'Premium Cotton T-Shirt',
-    price: 49.99,
-    originalPrice: 79.99,
-    rating: 4.5,
-    reviewCount: 328,
-    inStock: true,
-    images: [
-      "https://astrotalk.store/cdn/shop/files/1_1f120004-c0c6-45a4-b8a8-1f103580d1c2_large.webp?v=1768994904",
-      "https://astrotalk.store/cdn/shop/files/11_1_7c0d48ca-3160-477b-bdf4-405cd2002915_large.webp?v=1764246692",
-      "https://astrotalk.store/cdn/shop/files/1_2_6_large.webp?v=1764679096",
-      "https://astrotalk.store/cdn/shop/files/raw_selenite_free_1_large.webp?v=1758524005",
-      "https://astrotalk.store/cdn/shop/files/dhan_prapti_combo_2_large.webp?v=1766464921",
-    ],
-    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    colors: [
-      { name: 'Navy', hex: '#1e3a8a' },
-      { name: 'Black', hex: '#000000' },
-      { name: 'White', hex: '#ffffff' },
-      { name: 'Gray', hex: '#6b7280' }
-    ],
-    description: 'Crafted from 100% premium organic cotton, this t-shirt offers unparalleled comfort and durability. The fabric is breathable, soft, and designed to maintain its shape wash after wash.',
-    features: [
-      '100% organic cotton',
-      'Pre-shrunk fabric',
-      'Reinforced seams',
-      'Tagless design',
-      'Machine washable'
-    ]
-  };
+  // Prefer product passed via Link state (exact clicked card); fallback to data arrays
+  let product = location.state?.product || ProductData.find((ele) => ele.id === productId) || products.find((ele) => ele.id === productId);
+
+  if (!product) {
+    return <div>Product not found!</div>;
+  }
 
   const handlePrevImage = () => {
-    setSelectedImage((prev) => (prev === 0 ? product.images.length - 1 : prev - 1));
+    setSelectedImage((prev) => (prev === 0 ? 4 : prev - 1));
   };
 
   const handleNextImage = () => {
-    setSelectedImage((prev) => (prev === product.images.length - 1 ? 0 : prev + 1));
+    setSelectedImage((prev) => (prev === 4 ? 0 : prev + 1));
   };
 
   const handleQuantityChange = (delta) => {
     setQuantity((prev) => Math.max(1, prev + delta));
   };
-
-  const { id } = useParams();
-  const productId = Number(id);
-  const singleProduct = products.find((ele) => ele.id === productId);
-  if (!singleProduct) {
-    return <div>Product not found!</div>;
-  }
 
 
   return (
@@ -82,8 +54,8 @@ const ProductDetailsPage = () => {
             {/* Main Image */}
             <div className="relative aspect-square bg-white rounded-lg overflow-hidden group">
               <img
-                src={singleProduct.image}
-                alt={`${singleProduct.name} - view ${selectedImage + 1}`}
+                src={product.image}
+                alt={`${product.name} - view ${selectedImage + 1}`}
                 className="w-full h-full object-cover"
               />
 
@@ -135,33 +107,42 @@ const ProductDetailsPage = () => {
           <div className="space-y-6">
             {/* Title and Rating */}
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{singleProduct.name}</h1>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${i < Math.floor(product.rating)
-                        ? 'fill-yellow-400 text-yellow-400'
-                        : 'text-gray-300'
-                        }`}
-                    />
-                  ))}
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+              {product.rating && (
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-5 h-5 ${i < Math.floor(product.rating || 0)
+                          ? 'fill-yellow-400 text-yellow-400'
+                          : 'text-gray-300'
+                          }`}
+                      />
+                    ))}
+                  </div>
+                  {product.rating && (
+                    <span className="text-sm text-gray-600">
+                      {product.rating} ⭐
+                    </span>
+                  )}
                 </div>
-                <span className="text-sm text-gray-600">
-                  {product.rating} ({product.reviewCount} reviews)
-                </span>
-              </div>
+              )}
             </div>
 
             {/* Price */}
             <div className="flex items-baseline gap-3">
               <span className="text-4xl font-bold text-gray-900">
-                ${product.price}
+                ₹{product.price}
               </span>
               <span className="text-2xl text-gray-400 line-through">
-                ${product.originalPrice}
+                ₹{product.originalPrice}
               </span>
+              {product.discount && (
+                <span className="text-red-600 font-semibold text-lg">
+                  {product.discount}
+                </span>
+              )}
             </div>
 
             {/* Stock Status */}
@@ -169,9 +150,6 @@ const ProductDetailsPage = () => {
               <Check className="w-5 h-5 text-green-600" />
               <span className="text-green-600 font-medium">In Stock</span>
             </div>
-
-            {/* Description */}
-            <p className="text-gray-600 leading-relaxed">{product.description}</p>
 
             {/* Quantity */}
             <div>
@@ -217,18 +195,12 @@ const ProductDetailsPage = () => {
               </button>
             </div>
 
-            {/* Features */}
-            <div className="border-t pt-6">
-              <h3 className="font-semibold text-gray-900 mb-3">Key Features</h3>
-              <ul className="space-y-2">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Discount Info */}
+            {product.discount && (
+              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <p className="text-orange-800 font-semibold">🎉 Special Offer: {product.discount}</p>
+              </div>
+            )}
 
             {/* Shipping Info */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t pt-6">

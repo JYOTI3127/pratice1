@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ProductData } from "../Data/Data";
+import { sections } from "../Data/Data";
 import SectionSlider from "./Slider";
 import Card from "./Card";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,16 +19,18 @@ const Bestsellers = () => {
 
 
   useEffect(() => {
-    const data = ProductData.filter(
-      (section) => section.category === "Best Sellers"
+    const data = sections.filter(
+      (section) => section.name === "Best Sellers"
     );
-    setItems(data)
+    if (data.length > 0) {
+      setItems(data[0].items);
+    }
   }, [])
 
 
 
   return (
-    <section className="py-15 px-10">
+    <section className="py-10 px-5 md:py-15 md:px-10">
       <div className="container">
 
         <h2 className="text-3xl font-bold text-center mb-3">Best Seller</h2>

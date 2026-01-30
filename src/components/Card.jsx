@@ -21,18 +21,44 @@ const Card = ({ item }) => {
           className="
             absolute inset-0 
             bg-black/40 
+            
             flex items-center justify-center gap-4
             opacity-0 
             group-hover:opacity-100
             transition-all duration-300
           "
         >
-          {/* Add to Cart with Link */}
-         <Link to={`/product/${item.id}`}>
-            <button className="bg-black text-white px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:bg-gray-800 transition">
-              <FaShoppingCart /> Cart
-            </button>
-          </Link>
+          <div className="flex gap-2">
+            {/* Add to Cart */}
+            <Link to="/Addtocartpage" className="flex-1">
+              <button
+                type="button"
+                className="w-full bg-black text-white px-4 py-1.5 rounded-full flex items-center justify-center gap-1 text-sm 
+                 transform transition duration-200 hover:scale-105 hover:bg-gray-800"
+              >
+                <FaShoppingCart className="text-xs" />
+                Add
+              </button>
+            </Link>
+
+            {/* View Details */}
+            <Link
+              to={`/product/${item.id}`}
+              state={{ product: item }}
+              className="flex-1"
+            >
+              <button
+                type="button"
+                className="w-full border border-black text-black px-4 py-1.5 rounded-full flex items-center justify-center gap-1 text-sm
+                 transform transition duration-200 hover:scale-105 hover:bg-black hover:text-white"
+              >
+                View
+              </button>
+            </Link>
+          </div>
+
+
+
         </div>
       </div>
 
@@ -41,34 +67,34 @@ const Card = ({ item }) => {
         <h2 className="text-base font-semibold text-gray-800 mb-2">
           {item.name}
         </h2>
-      {/* Price */}
-      <div className="flex items-center gap-2">
-        <span className="text-yellow-500  text-lg">
-          ₹{item.price}
-        </span>
-        <span className="text-gray-400 line-through text-sm">
-          ₹{item.originalPrice}
-        </span>
-      </div>
+        {/* Price */}
+        <div className="flex items-center gap-2">
+          <span className="text-yellow-500  text-lg">
+            ₹{item.price}
+          </span>
+          <span className="text-gray-400 line-through text-sm">
+            ₹{item.originalPrice}
+          </span>
+        </div>
 
-      {/* Rating */}
-      <div className="flex items-center gap-1 text-yellow-500 text-sm">
-        {[1, 2, 3, 4, 5].map((i) =>
-          i <= item.rating ? <FaStar key={i} /> : <FaRegStar key={i} />
-        )}
-        <span className="text-black ml-1">{item.rating}</span>
-      </div>
+        {/* Rating */}
+        <div className="flex items-center gap-1 text-yellow-500 text-sm">
+          {[1, 2, 3, 4, 5].map((i) =>
+            i <= item.rating ? <FaStar key={i} /> : <FaRegStar key={i} />
+          )}
+          <span className="text-black ml-1">{item.rating}</span>
+        </div>
 
-      {/* MOBILE BUTTON (always visible) */}
-      <Link to={`/product/${item.id}`} state={{ product: item }}>
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mt-3 w-full bg-black text-white py-2 rounded flex items-center justify-center gap-2 text-sm sm:hidden"
-        >
-          <FaShoppingCart size={18} /> Add to Cart
-        </button>
-      </Link>
-    </div>
+        {/* MOBILE BUTTON (always visible) */}
+        <Link to={`/product/${item.id}`} state={{ product: item }}>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="mt-3 w-full bg-black text-white py-2 rounded flex items-center justify-center gap-2 text-sm sm:hidden"
+          >
+            <FaShoppingCart size={18} /> Add to Cart
+          </button>
+        </Link>
+      </div>
     </div >
   );
 };
