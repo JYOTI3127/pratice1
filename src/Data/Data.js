@@ -451,6 +451,7 @@ export const products = [
     id: 1,
     name: "Raw Pyrite Bracelet",
     price: 799,
+    category: "bracelets",
     originalPrice: 3099,
     rating: 4.8,
     discount: "74% OFF",
@@ -458,19 +459,10 @@ export const products = [
       "https://cdn.shopify.com/s/files/1/0878/4907/4985/files/fqhjs8nhyfsnhwbltljt.webp?v=1742562603",
   },
   {
-    id: 2,
-    name: "Navgraha Shanti Bracelet",
-    price: 599,
-    originalPrice: 1999,
-      rating: 4.3,
-    discount: "70% OFF",
-    image:
-      "https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Karungali_Rudraksha_Mala_1.webp?v=1765951149",
-  },
-  {
     id: 3,
     name: "Dhan Yog Bracelet",
     price: 699,
+    category: "bracelets",
       rating: 4.4,
     originalPrice: 1999,
     discount: "65% OFF",
@@ -481,6 +473,7 @@ export const products = [
     id: 4,
     name: "7 Horses on Raw Pyrite Frame",
     price: 999,
+    category: "pyramid",
       rating: 4.5,
     originalPrice: 2900,
     discount: "66% OFF",
@@ -491,7 +484,8 @@ export const products = [
     id: 5,
     name: "Raw Pyrite Anklet",
     price: 899,
-      rating: 4.6,
+    category: "anklet",
+    rating: 4.6,
     originalPrice: 1400,
     discount: "36% OFF",
     image:
@@ -500,6 +494,7 @@ export const products = [
   {
     id: 6,
     name: "Ruby (Manik)",
+        category: "gemstones",
     image:
       "https://astrotalk.store/cdn/shop/files/Pukhraj_7_large.png?v=1762147587",
     benefit: "Confidence, leadership & success",
@@ -511,6 +506,7 @@ export const products = [
   {
     id: 7,
     name: "Emerald (Panna)",
+        category: "gemstones",
     image:
       "https://astrotalk.store/cdn/shop/files/Emerald_Panna_large.png?v=1762147589",
     benefit: "Intelligence, communication & focus",
@@ -522,6 +518,7 @@ export const products = [
   {
     id: 8,
     name: "Yellow Sapphire (Pukhraj)",
+    category: "gemstones",
     image:
       "https://astrotalk.store/cdn/shop/files/Ruby_5_large.png?v=1762147587",
     benefit: "Wealth, wisdom & prosperity",
@@ -533,6 +530,7 @@ export const products = [
   {
     id: 9,
     name: "Pearl (Moti)",
+    category: "gemstones",
     image:
       "https://astrotalk.store/cdn/shop/files/Neelam_5_large.png?v=1762147588",
     benefit: "Peace, emotional balance & calm mind",
@@ -544,6 +542,7 @@ export const products = [
   {
     id: 10,
     name: "Dhan Yog Product 1",
+    category: "rudraksha",
     price: 699,
     originalPrice: 699,
     rating: 4.5,
@@ -552,6 +551,7 @@ export const products = [
   {
     id: 11,
     name: "Dhan Yog Product 2",
+    category: "rudraksha",
     price: 599,
     originalPrice: 899,
     rating: 4.0,
@@ -560,6 +560,7 @@ export const products = [
   {
     id: 12,
     name: "Dhan Yog Product 3",
+    category: "rudraksha",
     price: 8399,
     originalPrice: 599,
     rating: 4.2,
@@ -569,6 +570,7 @@ export const products = [
   {
     id: 13,
     name: "Dhan Yog Product 4",
+    category: "rudraksha",
     price: 8999,
     originalPrice: 749,
     rating: 4.7,
@@ -578,6 +580,7 @@ export const products = [
   {
     id: 14,
     name: "Dhan Yog Product 1",
+    category: "rudraksha",
     price: 699,
     originalPrice: 699,
     rating: 4.5,
@@ -586,6 +589,7 @@ export const products = [
   {
     id: 15,
     name: "Dhan Yog Product 2",
+    category: "rudraksha",
     price: 599,
     originalPrice: 899,
     rating: 4.0,
@@ -594,6 +598,7 @@ export const products = [
   {
     id: 16,
     name: "Crystal Healing Bracelet",
+    category: "rudraksha",
     price: 449,
     originalPrice: 799,
     discount: "44% OFF",
@@ -603,6 +608,7 @@ export const products = [
   {
     id: 17,
     name: "Amethyst Bracelet",
+    category: "rudraksha",
     price: 549,
     originalPrice: 999,
     discount: "45% OFF",
@@ -612,6 +618,7 @@ export const products = [
   {
     id: 18,
     name: "Rose Quartz Bracelet",
+    category: "bracelets",
     price: 399,
     originalPrice: 699,
     discount: "43% OFF",
@@ -622,6 +629,7 @@ export const products = [
     id: 19,
     name: "Black Tourmaline Bracelet",
     price: 599,
+     category: "bracelets",
     originalPrice: 999,
     discount: "40% OFF",
     rating: 4.5,
@@ -630,6 +638,7 @@ export const products = [
   {
     id: 20,
     name: "Citrine Bracelet",
+     category: "bracelet",
     price: 649,
     originalPrice: 1099,
     discount: "41% OFF",
@@ -675,6 +684,7 @@ export const products = [
   {
     id: 25,
     name: "Sri Yantra",
+      category: "yantra",
     price: 499,
     originalPrice: 999,
     discount: "50% OFF",
@@ -684,6 +694,7 @@ export const products = [
   {
     id: 26,
     name: "Kuber Yantra",
+      category: "yantra",
     price: 599,
     originalPrice: 1199,
     discount: "50% OFF",
@@ -693,6 +704,7 @@ export const products = [
   {
     id: 27,
     name: "Shiva Yantra",
+      category: "yantra",
     price: 449,
     originalPrice: 899,
     discount: "50% OFF",
@@ -702,6 +714,7 @@ export const products = [
   {
     id: 28,
     name: "Combo Deal - Dhan Prapti",
+   category: "combobracelets",
     price: 799,
     originalPrice: 1899,
     discount: "58% OFF",
@@ -711,6 +724,7 @@ export const products = [
   {
     id: 29,
     name: "Combo Deal - Shanti & Peace",
+     category: "combobracelets",
     price: 899,
     originalPrice: 1999,
     discount: "55% OFF",
@@ -720,6 +734,7 @@ export const products = [
   {
     id: 30,
     name: "Combo Deal - Power Pack",
+        category: "combobracelets",
     price: 1099,
     originalPrice: 2499,
     discount: "56% OFF",
@@ -729,6 +744,7 @@ export const products = [
   {
     id: 31,
     name: "Women Crystal Bracelet - Pink",
+        category: "womenbracelet",
     price: 399,
     originalPrice: 799,
     discount: "50% OFF",
@@ -738,6 +754,7 @@ export const products = [
   {
     id: 32,
     name: "Women Rose Quartz Bracelet",
+        category: "womenbracelet",
     price: 449,
     originalPrice: 899,
     discount: "50% OFF",
@@ -747,6 +764,7 @@ export const products = [
   {
     id: 33,
     name: "Women Amethyst Bracelet",
+      category: "womenbracelet",
     price: 499,
     originalPrice: 999,
     discount: "50% OFF",
@@ -756,6 +774,7 @@ export const products = [
   {
     id: 34,
     name: "Clear Quartz Pyramid",
+     category: "pyramids",
     price: 799,
     originalPrice: 1599,
     discount: "50% OFF",
@@ -765,6 +784,7 @@ export const products = [
   {
     id: 35,
     name: "Selenite Pyramid",
+       category: "pyramids",
     price: 699,
     originalPrice: 1399,
     discount: "50% OFF",
@@ -774,6 +794,7 @@ export const products = [
   {
     id: 36,
     name: "Amethyst Pyramid",
+       category: "pyramids",
     price: 849,
     originalPrice: 1699,
     discount: "50% OFF",

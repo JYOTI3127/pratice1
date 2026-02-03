@@ -2,71 +2,129 @@ import React from "react";
 import { FaShoppingCart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const StarRating = ({ value = 0 }) => {
-    const stars = Array.from({ length: 5 }, (_, i) => i + 1);
-    return (
-        <div className="flex items-center gap-1 text-amber-500">
-            {stars.map((s) => (
-                <FaStar key={s} className={s <= Math.round(value) ? "opacity-100" : "opacity-30"} />
-            ))}
+/* ── StarRating ── */
+const StarRating = ({ value = 0 }) => (
+  <div className="flex items-center gap-0.5">
+    {[1, 2, 3, 4, 5].map((s) => (
+      <FaStar
+        key={s}
+        size={13}
+        className={s <= Math.round(value) ? "text-amber-500" : "text-gray-200"}
+      />
+    ))}
+  </div>
+);
+
+/* ── ProductCard ── */
+const ProductCard = ({ product, onAddToCart }) => {
+  /* savings % calculate */
+  const savings = product.originalPrice
+    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    : 0;
+
+  /* cart handler */
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onAddToCart) {
+      onAddToCart(product);
+    } else {
+      let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const existing = cart.find((item) => item.id === product.id);
+      if (existing) {
+        cart = cart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+      window.dispatchEvent(new Event("storage"));
+    }
+  };
+
+  return (
+    /* group — parent hai taaki children pe group-hover use kar sakein */
+    <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+
+      {/* ─── IMAGE SECTION ─── */}
+      <div className="relative bg-gray-50 overflow-hidden">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+
+        {/* Badges — Best Seller + Discount */}
+        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+          {product.isBestseller && (
+            <span className="bg-gradient-to-r from-amber-600 to-amber-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md tracking-wider uppercase">
+              ⚡ Best Seller
+            </span>
+          )}
+          {savings > 0 && (
+            <span className="bg-white border border-amber-300 text-amber-700 text-[10px] font-bold px-2.5 py-0.5 rounded-md">
+              {savings}% OFF
+            </span>
+          )}
         </div>
-    );
-};
 
-const ProductCard = ({ product }) => {
-    return (
-        <div className="bg-white rounded-lg shadow-sm transition-transform overflow-hidden h-full flex flex-col">
-            <div className="relative bg-gray-50">
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-52 object-cover"
-                    loading="lazy"
-                />
-
-                {/* Discount badge */}
-                {product.discount && (
-                    <span className="absolute top-3 left-3 bg-amber-600 text-white text-xs font-semibold px-2 py-1 rounded">
-                        {product.discount}
-                    </span>
-                )}
-
-                {/* Quick actions removed to keep card static — actions remain in footer */}
-            </div>
-
-            <div className="p-4 mt-auto">
-                <h3 className="text-sm font-semibold text-gray-800 mb-2 line-clamp-2">{product.name}</h3>
-
-                <div className="flex items-center justify-between mb-3">
-                    <div>
-                        <div className="text-lg font-bold text-gray-900">₹{product.price}</div>
-                        {product.originalPrice && (
-                            <div className="text-sm text-gray-400 line-through">₹{product.originalPrice}</div>
-                        )}
-                    </div>
-
-                    <div className="flex flex-col items-end">
-                        <StarRating value={product.rating} />
-                        <div className="text-xs text-gray-500">{product.rating ? product.rating.toFixed(1) : "—"}</div>
-                    </div>
-                </div>
-
-                <div className="flex gap-2">
-                    <Link to={`/product/${product.id}`} state={{ product }} className="flex-1">
-                        <button className="w-full bg-transparent border border-amber-600 text-amber-600 py-2 rounded hover:bg-amber-600 hover:text-white transition">
-                            View
-                        </button>
-                    </Link>
-
-                    <Link to="/Addtocartpage" className="w-1/2">
-                        <button className="w-full bg-amber-600 text-white py-3 rounded hover:bg-amber-700 transition flex items-center justify-center gap-2">
-                            <FaShoppingCart />
-                        </button>
-                    </Link>
-                </div>
-            </div>
+        {/* Hover Overlay — Quick Add to Cart button */}
+        <div className="absolute inset-x-0 bottom-0 flex items-end justify-center px-3 pb-3 pt-12 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            onClick={handleAddToCart}
+            className="w-full flex items-center justify-center gap-2 bg-amber-600/90 backdrop-blur-sm text-white text-sm font-bold py-2 rounded-lg hover:bg-amber-600 transition-colors duration-150"
+          >
+            <FaShoppingCart size={14} />
+            Add to Cart
+          </button>
         </div>
-    );
+      </div>
+
+      {/* ─── CONTENT SECTION ─── */}
+      <div className="p-3 sm:p-4 flex flex-col flex-1">
+
+        {/* Name — 2 line clamp */}
+        <h3 className="text-sm font-bold text-gray-800 mb-2 leading-snug line-clamp-2">
+          {product.name}
+        </h3>
+
+        {/* Stars + numeric rating */}
+        <div className="flex items-center gap-1.5 mb-3">
+          <StarRating value={product.rating} />
+          <span className="text-xs text-gray-500 font-semibold">
+            {product.rating ? product.rating.toFixed(1) : "—"}
+          </span>
+        </div>
+
+        {/* Price row + small (+) button */}
+        <div className="mt-auto flex items-end justify-between">
+          <div>
+            <div className="text-lg font-extrabold text-gray-900">
+              ₹{product.price.toLocaleString()}
+            </div>
+            {product.originalPrice && (
+              <div className="text-xs text-gray-400 line-through">
+                ₹{product.originalPrice.toLocaleString()}
+              </div>
+            )}
+          </div>
+
+          {/* (+) quick-add circle button */}
+        </div>
+
+        {/* View Product link-button */}
+        <Link
+          to={`/product/${product.id}`}
+          state={{ product }}
+          className="mt-3 block w-full text-center text-sm font-semibold border border-amber-600 text-amber-700 py-1.5 rounded-lg hover:bg-amber-600 hover:text-white transition-colors duration-200"
+        >
+          View Product
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default ProductCard;

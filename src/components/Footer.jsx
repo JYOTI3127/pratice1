@@ -327,7 +327,7 @@ const Footer = () => {
 
         </div>
       </div>
-      <div className=" bg-black text-[#000]-white text-[#000]-center py-5 mt-5">
+      <div className=" bg-black text-white text-center py-5 mt-5">
         Copyright  {new Date().getFullYear()} Astrology (Powered by Astrology Services Private Limited). All Rights Reserved
       </div>
     </footer>

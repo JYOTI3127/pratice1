@@ -1,0 +1,5 @@
+- [x] Add scroll event listener to container to detect manual scrolling
+- [x] Set ignoreObserverRef to true during manual scroll to prevent observer interference
+- [x] Adjust IntersectionObserver rootMargin to '-50% 0px -50%' for less sensitivity
+- [x] Test the scrolling behavior to ensure it no longer gets stuck on gemstones
+- [x] Hide the scrollbar in the product list container

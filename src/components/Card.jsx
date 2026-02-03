@@ -3,6 +3,24 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart, FaStar, FaEye, FaRegStar } from "react-icons/fa";
 
 const Card = ({ item }) => {
+  const addToCart = () => {
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const existing = cart.find((itemCart) => itemCart.id === item.id);
+
+    if (existing) {
+      cart = cart.map((itemCart) =>
+        itemCart.id === item.id ? { ...itemCart, quantity: itemCart.quantity + 1 } : itemCart
+      );
+    } else {
+      cart.push({ ...item, quantity: 1 });
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+
+    // Trigger Navbar update
+    window.dispatchEvent(new Event("storage"));
+  };
+
   return (
     <div className="bg-white rounded-xl overflow-hidden flex-shrink-0 w-full shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
 
@@ -30,16 +48,22 @@ const Card = ({ item }) => {
         >
           <div className="flex gap-2">
             {/* Add to Cart */}
-            <Link to="/Addtocartpage" className="flex-1">
+            <Link
+              to="/Addtocartpage"
+              state={{ product: item }}
+              className="flex-1"
+              onClick={addToCart}
+            >
               <button
                 type="button"
                 className="w-full bg-black text-white px-4 py-1.5 rounded-full flex items-center justify-center gap-1 text-sm 
-                 transform transition duration-200 hover:scale-105 hover:bg-gray-800"
+     transform transition duration-200 hover:scale-105 hover:bg-gray-800"
               >
                 <FaShoppingCart className="text-xs" />
                 Add
               </button>
             </Link>
+
 
             {/* View Details */}
             <Link
@@ -86,9 +110,8 @@ const Card = ({ item }) => {
         </div>
 
         {/* MOBILE BUTTON (always visible) */}
-        <Link to={`/product/${item.id}`} state={{ product: item }}>
+        <Link to="/Addtocartpage" state={{ product: item }} onClick={addToCart}>
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="mt-3 w-full bg-black text-white py-2 rounded flex items-center justify-center gap-2 text-sm sm:hidden"
           >
             <FaShoppingCart size={18} /> Add to Cart
