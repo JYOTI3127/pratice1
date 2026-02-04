@@ -1,19 +1,19 @@
-import { Outlet, useLocation } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import PageBanner from '../components/PageBanner'
+import { Outlet, useLocation } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import PageBanner from "../components/PageBanner";
 
 const Layout = () => {
   const location = useLocation();
 
-  // Jin pages pe navbar aur page banner hide karna hai
-  const hideOnPages = ['/Addtocartpage', '/product'];
-
-  // Agar current path hideOnPages me hai to true, warna false
-  const hideNavbarAndBanner = hideOnPages.some(path => location.pathname.includes(path));
+  // Sirf in exact pages pe navbar & banner hide honge
+  const hideNavbarAndBanner =
+  
+    location.pathname === "/product";
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
+      {/* Navbar & Banner */}
       {!hideNavbarAndBanner && <Navbar />}
       {!hideNavbarAndBanner && <PageBanner />}
 
@@ -22,9 +22,10 @@ const Layout = () => {
         <Outlet />
       </main>
 
+      {/* Footer always visible */}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

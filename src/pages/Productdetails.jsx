@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ShoppingCart, Heart, Star, ChevronLeft, ChevronRight, Check, Truck, Shield, RefreshCw } from 'lucide-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useParams, useLocation } from 'react-router-dom';
 import { products, ProductData } from "../Data/Data";
+import { useCart } from '../context/CartContext';
 
 const ProductDetailsPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -11,7 +12,7 @@ const ProductDetailsPage = () => {
   const [selectedColor, setSelectedColor] = useState('Navy');
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
-
+  const {cartItems, addToCart} = useCart()
   const { id } = useParams();
   const location = useLocation();
   const productId = Number(id);
@@ -24,7 +25,7 @@ const ProductDetailsPage = () => {
   }
 
   const handlePrevImage = () => {
-    setSelectedImage((prev) => (prev === 0 ? 4 : prev - 1));
+    setSelectedImage((prev) => (prev === 4 ? 0 : prev - 1));
   };
 
   const handleNextImage = () => {
@@ -35,6 +36,9 @@ const ProductDetailsPage = () => {
     setQuantity((prev) => Math.max(1, prev + delta));
   };
 
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -177,7 +181,10 @@ const ProductDetailsPage = () => {
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <button className="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+              <button
+                onClick={handleAddToCart}
+                className="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+              >
                 <ShoppingCart className="w-5 h-5" />
                 Add to Cart
               </button>

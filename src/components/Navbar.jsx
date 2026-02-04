@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart, ChevronDown } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-
+  const { cartItems, addToCart } = useCart();
+ 
   const navLinks = [
     { name: "Product", path: "/product" },
     { name: "Rudraksh", path: "/rudraksha" },
@@ -60,7 +62,7 @@ const Navbar = () => {
             <Link to="/Addtocartpage" className="relative hover:text-amber-600 transition-colors">
               <ShoppingCart size={22} />
               <span className="absolute -top-2 -right-2 bg-red-500 text-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-semibold">
-                0
+               { cartItems.reduce((s, i) => s + i.qty, 0) }
               </span>
             </Link>
           </div>

@@ -1,40 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   ShoppingCart, Trash2, Plus, Minus, Tag, Truck, Shield,
   CreditCard, ArrowLeft, Package, Sparkles, AlertCircle,
   CheckCircle2, X, Image
 } from 'lucide-react';
-
-const DUMMY_PRODUCTS = [
-  {
-    id: 1,
-    name: 'Premium Wireless Headphones',
-    price: 2499,
-    originalPrice: 3999,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop',
-    color: 'Midnight Black',
-    size: 'One Size',
-  },
-  {
-    id: 2,
-    name: 'Nike Air Max 90',
-    price: 5499,
-    originalPrice: 7499,
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop',
-    color: 'White / Red',
-    size: '42',
-  },
-  {
-    id: 3,
-    name: 'Leather Crossbody Bag',
-    price: 1299,
-    originalPrice: 1999,
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&h=200&fit=crop',
-    color: 'Tan Brown',
-    size: 'Medium',
-  },
-];
+import { useCart } from '../context/CartContext';
 
 const COUPONS = {
   SAVE10: { discount: 10, type: 'percent', label: '10% off' },
@@ -43,62 +14,29 @@ const COUPONS = {
 };
 
 const Addtocartpage = () => {
-  const location = useLocation();
   const navigate = useNavigate?.() || null;
-  const product = location?.state?.product;
+  const { cartItems, setCartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
 
-  const [cartItems, setCartItems] = useState([]);
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [couponStatus, setCouponStatus] = useState(null);
   const [removingId, setRemovingId] = useState(null);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
 
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-    setCartItems(savedCart);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  useEffect(() => {
-    if (!product) return;
-    setCartItems(prev => {
-      const exists = prev.find(item => item.id === product.id);
-      if (exists) {
-        return prev.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
-      return [
-        ...prev,
-        {
-          ...product,
-          quantity: 1,
-          color: product.color || 'Default',
-          size: product.size || 'Standard',
-          originalPrice: product.originalPrice || product.price,
-        },
-      ];
-    });
-  }, [product]);
-
-  const updateQuantity = (id, change) => {
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
-      )
-    );
-  };
-
-  const removeItem = (id) => {
+  const handleRemoveItem = (id) => {
     setRemovingId(id);
     setTimeout(() => {
-      setCartItems(items => items.filter(item => item.id !== id));
+      removeFromCart(id);
       setRemovingId(null);
     }, 300);
+  };
+
+  const handleIncreaseQuantity = (id) => {
+    increaseQuantity(id);
+  };
+
+  const handleDecreaseQuantity = (id) => {
+    decreaseQuantity(id);
   };
 
   const applyCoupon = () => {
@@ -119,8 +57,8 @@ const Addtocartpage = () => {
     setCouponCode('');
   };
 
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const originalTotal = cartItems.reduce((sum, item) => sum + (item.originalPrice || item.price) * item.quantity, 0);
+  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const originalTotal = cartItems.reduce((sum, item) => sum + (item.originalPrice || item.price) * item.qty, 0);
   const productSavings = originalTotal - subtotal;
   const shippingFee = subtotal > 10000 ? 0 : 199;
   const freeShippingRemaining = Math.max(0, 10000 - subtotal);
@@ -217,25 +155,25 @@ const Addtocartpage = () => {
                       <span>Size: {item.size || 'Standard'}</span>
                     </div>
                     <div className="item-price-row flex items-center gap-2">
-                      <span className="item-price text-base font-bold">₹{(item.price * item.quantity).toLocaleString()}</span>
+                      <span className="item-price text-base font-bold">₹{(item.price * item.qty).toLocaleString()}</span>
                       {item.originalPrice && item.originalPrice !== item.price && (
                         <span className="item-original-price text-xs text-gray-400 line-through">
-                          ₹{(item.originalPrice * item.quantity).toLocaleString()}
+                          ₹{(item.originalPrice * item.qty).toLocaleString()}
                         </span>
                       )}
                     </div>
 
                     <div className="item-bottom flex justify-between items-center mt-2">
                       <div className="qty-controls flex items-center gap-0 bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
-                        <button className="qty-btn w-8 h-8 flex items-center justify-center hover:bg-gray-200" onClick={() => updateQuantity(item.id, -1)}>
+                        <button className="qty-btn w-8 h-8 flex items-center justify-center hover:bg-gray-200" onClick={() => handleDecreaseQuantity(item.id)}>
                           <Minus size={14} strokeWidth={2.5} />
                         </button>
-                        <div className="qty-value w-9 text-center text-sm font-semibold">{item.quantity}</div>
-                        <button className="qty-btn w-8 h-8 flex items-center justify-center hover:bg-gray-200" onClick={() => updateQuantity(item.id, 1)}>
+                        <div className="qty-value w-9 text-center text-sm font-semibold">{item.qty}</div>
+                        <button className="qty-btn w-8 h-8 flex items-center justify-center hover:bg-gray-200" onClick={() => handleIncreaseQuantity(item.id)}>
                           <Plus size={14} strokeWidth={2.5} />
                         </button>
                       </div>
-                      <button className="remove-btn w-8 h-8 flex items-center justify-center bg-red-100 border border-red-200 rounded-lg text-red-600 hover:bg-red-600 hover:text-white transition" onClick={() => removeItem(item.id)}>
+                      <button className="remove-btn w-8 h-8 flex items-center justify-center bg-red-100 border border-red-200 rounded-lg text-red-600 hover:bg-red-600 hover:text-white transition" onClick={() => handleRemoveItem(item.id)}>
                         <Trash2 size={15} strokeWidth={2} />
                       </button>
                     </div>
@@ -332,7 +270,7 @@ const Addtocartpage = () => {
               </div>
               <div className="summary-wrap p-4">
                 <div className="summary-row flex justify-between text-sm text-gray-600 py-1">
-                  <span className="label">Subtotal ({cartItems.reduce((s, i) => s + i.quantity, 0)} items)</span>
+                  <span className="label">Subtotal ({cartItems.reduce((s, i) => s + i.qty, 0)} items)</span>
                   <span className="value font-semibold text-gray-900">₹{subtotal.toLocaleString()}</span>
                 </div>
                 {productSavings > 0 && (
