@@ -561,6 +561,7 @@ export default function App() {
     else if (filters.sort === "name") list.sort((a, b) => a.name.localeCompare(b.name));
     return list;
   }, [selectedCategory, filters])();
+  }, [selectedCategory, filters])();
 
   // ── add to cart ──
   const handleAddToCart = (product) => {
@@ -761,6 +762,6 @@ export default function App() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
