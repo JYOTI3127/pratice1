@@ -1,15 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { TiSocialFacebook, TiSocialTwitter, TiSocialYoutube } from "react-icons/ti";
 import { SlSocialInstagram } from "react-icons/sl";
 import logo from "../assets/logo.png";
+import { FaAnglesRight } from "react-icons/fa6";
+import { api } from "../api/api";
 
 
 const Footer = () => {
+
+  const [horoscope, setHoroscope] = useState([]);
+  const [horosType, setHorosType] = useState([]);
+
+  /* ---------------- FETCH HOROSCOPES ---------------- */
+  useEffect(() => {
+    const fetchHoroscopes = async () => {
+      try {
+        const res = await api.get("/horoscopes"); // confirm endpoint
+        setHoroscope(res.data.data);
+
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    fetchHoroscopes();
+  }, []);
+
+  /* ----------- GENERATE HOROSCOPE TYPES MENU ----------- */
+  useEffect(() => {
+    if (horoscope?.length > 0) {
+      try {
+        const horosSet = new Set();
+        const horos = [];
+
+        horoscope.forEach((ele) => {
+          if (ele.type && !horosSet.has(ele.type)) {
+            horosSet.add(ele.type);
+
+            horos.push({
+              label:
+                ele.type.charAt(0).toUpperCase() +
+                ele.type.slice(1) +
+                " Horoscope",
+              path: `/horoscopes/${ele.type.toLowerCase()}`,
+            });
+          }
+        });
+
+        setHorosType(horos);
+      
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  }, [horoscope]);
+
   return (
     <footer className='bg-accent-foreground pt-10 pb-0 bg-[#f7f5f2] border-t border-gray-300 mt-10'>
-      <div className="container pl-4 lg:pl-[15px]">
+      <div className="container pl-15 lg:pl-[70px]">
         <div>
           <div className="border-b border-gray-500 pb-4 mb-4">
             <Link to="/">
@@ -28,32 +78,17 @@ const Footer = () => {
                 <h2 className='text-[#000]-black border-b-2 border-b-primary/80 inline-block pb-1 font-semibold text-[#000]-lg '>About Astrology</h2>
 
                 <ul className="mt-2">
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
-                    <Link to="">Today's Horoscope</Link>
-                  </li>
-
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
-                    <Link to="">Today's Love Horoscope</Link>
-                  </li>
-
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
-                    <Link to="">Yesterday's Horoscope</Link>
-                  </li>
-
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-GREY-400">
-                    <Link to="">Tomorrow's Horoscope</Link>
-                  </li>
-
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
-                    <Link to="">Weekly Horoscope</Link>
-                  </li>
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
-                    <Link to="">Monthly Horoscope</Link>
-                  </li>
-
-                  <li className="text-[#000] text-sm mb-2 transition-all duration-300 hover:translate-x-2 hover:text-[GREY-400]">
-                    <Link to="">Yearly Horoscope</Link>
-                  </li>
+                  {horosType.map((horos) => (
+                    <li
+                      key={horos.path}
+                      className="text-black text-sm mb-2 transition-all duration-300 hover:translate-x-2"
+                    >
+                      <Link to={horos.path}>
+                        
+                        {horos.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
 
               </div>
@@ -61,14 +96,13 @@ const Footer = () => {
                 <h2 className='text-[#000]-black  border-b-2 border-b-primary/80 inline-block pb-1 font-semibold text-[#000]-lg '>Shubh Muhurat 2025</h2>
 
                 <ul className='mt-2'>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Annanprashan Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Naamkaran Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Car/Bike Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Marriage Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Gold Buying Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Bhoomi Pujan Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Griha Pravesh Muhurat 2025</Link></li>
-                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to={""} > Mundan Muhurat 2025</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/annanprashan-muhurat" > Annanprashan Muhurat 2026</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/aamkaran-muhurat" > Naamkaran Muhurat 2026</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/car-bike-muhurat" > Car/Bike Muhurat 2026</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/marriage-muhurat" > Marriage Muhurat 2026</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/bhumiPuja-muhurat" > Bhoomi Pujan Muhurat 2026</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/griha-pravesh-muhurat" > Griha Pravesh Muhurat 2026</Link></li>
+                  <li className='text-[#000] text-sm mb-2   transition-all duration-300 hover:translate-x-2'><Link to="/mundan-muhurat" > Mundan Muhurat 2026</Link></li>
 
                 </ul>
               </div>

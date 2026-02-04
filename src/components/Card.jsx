@@ -1,25 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaStar, FaEye, FaRegStar } from "react-icons/fa";
+import { FaShoppingCart, FaStar, FaRegStar } from "react-icons/fa";
+import { useCart } from '../context/CartContext';
 
 const Card = ({ item }) => {
-  const addToCart = () => {
-    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const existing = cart.find((itemCart) => itemCart.id === item.id);
-
-    if (existing) {
-      cart = cart.map((itemCart) =>
-        itemCart.id === item.id ? { ...itemCart, quantity: itemCart.quantity + 1 } : itemCart
-      );
-    } else {
-      cart.push({ ...item, quantity: 1 });
-    }
-
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-
-    // Trigger Navbar update
-    window.dispatchEvent(new Event("storage"));
-  };
+  const { addToCart } = useCart(); // ✅ use context
 
   return (
     <div className="bg-white rounded-xl overflow-hidden flex-shrink-0 w-full shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
@@ -34,12 +19,11 @@ const Card = ({ item }) => {
           className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
         />
 
-        {/* HOVER ACTIONS */}
+        {/* HOVER ACTIONS (desktop) */}
         <div
           className="
             absolute inset-0 
             bg-black/40 
-            
             flex items-center justify-center gap-4
             opacity-0 
             group-hover:opacity-100
@@ -48,22 +32,18 @@ const Card = ({ item }) => {
         >
           <div className="flex gap-2">
             {/* Add to Cart */}
-            <Link
-              to="/Addtocartpage"
-              state={{ product: item }}
-              className="flex-1"
-              onClick={addToCart}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                addToCart(item); 
+              }}
+              className="w-full bg-black text-white px-4 py-1.5 rounded-full flex items-center justify-center gap-1 text-sm 
+               transform transition duration-200 hover:scale-105 hover:bg-gray-800"
             >
-              <button
-                type="button"
-                className="w-full bg-black text-white px-4 py-1.5 rounded-full flex items-center justify-center gap-1 text-sm 
-     transform transition duration-200 hover:scale-105 hover:bg-gray-800"
-              >
-                <FaShoppingCart className="text-xs" />
-                Add
-              </button>
-            </Link>
-
+              <FaShoppingCart className="text-xs" />
+              Add
+            </button>
 
             {/* View Details */}
             <Link
@@ -80,9 +60,6 @@ const Card = ({ item }) => {
               </button>
             </Link>
           </div>
-
-
-
         </div>
       </div>
 
@@ -91,6 +68,7 @@ const Card = ({ item }) => {
         <h2 className="text-base font-semibold text-gray-800 mb-2">
           {item.name}
         </h2>
+
         {/* Price */}
         <div className="flex items-center gap-2">
           <span className="text-yellow-500  text-lg">
@@ -110,15 +88,14 @@ const Card = ({ item }) => {
         </div>
 
         {/* MOBILE BUTTON (always visible) */}
-        <Link to="/Addtocartpage" state={{ product: item }} onClick={addToCart}>
-          <button
-            className="mt-3 w-full bg-black text-white py-2 rounded flex items-center justify-center gap-2 text-sm sm:hidden"
-          >
-            <FaShoppingCart size={18} /> Add to Cart
-          </button>
-        </Link>
+        <button
+          onClick={() => addToCart(item)} // ✅ Context function
+          className="mt-3 w-full bg-black text-white py-2 rounded flex items-center justify-center gap-2 text-sm sm:hidden"
+        >
+          <FaShoppingCart size={18} /> Add to Cart
+        </button>
       </div>
-    </div >
+    </div>
   );
 };
 
